@@ -17,23 +17,23 @@ function Carousel() {
     const colors = [
         {
             id: 0,
-            color: "red"
+            color: "bg-red-900"
         },
         {
             id: 2,
-            color: "slate",
+            color: "bg-slate-900",
         },
         {
             id: 4,
-            color: "blue",
+            color: "bg-blue-900",
         },
         {
             id: 6,
-            color: "orange",
+            color: "bg-orange-900",
         },
         {
             id: 8,
-            color: "sky",
+            color: "bg-sky-900",
         },
     ]
 
@@ -66,7 +66,7 @@ function Carousel() {
     };
 
     return (
-        <div id='app' className={`relative h-dvh flex items-center justify-center bg-${colorActive}-900 transition-colors`}>
+        <div id='app' className={`relative h-dvh flex items-center justify-center ${colorActive} transition-colors`}>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
