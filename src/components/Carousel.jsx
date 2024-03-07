@@ -17,7 +17,7 @@ function Carousel() {
     const colors = [
         {
             id: 0,
-            color: "bg-red-900"
+            color: "bg-blue-900"
         },
         {
             id: 2,
@@ -25,15 +25,15 @@ function Carousel() {
         },
         {
             id: 4,
-            color: "bg-blue-900",
-        },
-        {
-            id: 6,
             color: "bg-orange-900",
         },
         {
-            id: 8,
+            id: 6,
             color: "bg-sky-900",
+        },
+        {
+            id: 8,
+            color: "bg-red-900",
         },
     ]
 
@@ -55,10 +55,11 @@ function Carousel() {
     }, [])
 
     useEffect(() => {
-        let color = colors.filter(color => color.id === activeindex);
-        if (color.length > 0) {
-            setColorActive(color[0].color);
-        }
+        let color = colors.filter(color => color.id <= activeindex);
+        let colorString = color[color.length - 1].color;
+
+
+        setColorActive(colorString);
     }, [activeindex])
 
     const handleSlideChange = (swiper) => {
