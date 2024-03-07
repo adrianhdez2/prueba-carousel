@@ -66,7 +66,7 @@ function Carousel() {
     };
 
     return (
-        <div id='app' className={`relative h-dvh flex items-center justify-center bg-${colorActive}-900 transition-colors`}>
+        <div id='app' className={`z-10 relative h-dvh flex items-center justify-center bg-${colorActive}-900 transition-colors`}>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
