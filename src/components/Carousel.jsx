@@ -14,8 +14,31 @@ import './styles.css';
 
 
 function Carousel() {
+    const colors = [
+        {
+            id: 0,
+            color: "red"
+        },
+        {
+            id: 2,
+            color: "slate",
+        },
+        {
+            id: 4,
+            color: "blue",
+        },
+        {
+            id: 6,
+            color: "orange",
+        },
+        {
+            id: 8,
+            color: "sky",
+        },
+    ]
 
     const [activeindex, setActiveindex] = useState(0);
+    const [colorActive, setColorActive] = useState('red')
 
     useEffect(() => {
         let lightbox = new PhotoSwipeLightbox({
@@ -31,12 +54,19 @@ function Carousel() {
         };
     }, [])
 
+    useEffect(() => {
+        let color = colors.filter(color => color.id === activeindex);
+        if (color.length > 0) {
+            setColorActive(color[0].color);
+        }
+    }, [activeindex])
+
     const handleSlideChange = (swiper) => {
-        setActiveindex(swiper.activeIndex)
+        setActiveindex(swiper.activeIndex);
     };
 
     return (
-        <div id='app' className='relative h-dvh flex items-center justify-center'>
+        <div id='app' className={`relative h-dvh flex items-center justify-center bg-${colorActive}-900 transition-colors`}>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
