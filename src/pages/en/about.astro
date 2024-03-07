@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import App from '../../components/pages/About.astro'
+
+import { getI18n } from "../../i18n";
+const {currentLocale} = Astro
+const i18n = getI18n({currentLocale});
+---
+
+<Layout title={i18n.ABOUT_TITLE}>
+	<App/>
+</Layout>
+
+

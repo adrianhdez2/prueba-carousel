@@ -1,0 +1,80 @@
+---
+import { languages } from "../i18n/ui";
+import {
+  getRouteFromUrl,
+  getLangFromUrl,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+
+const route = getRouteFromUrl(Astro.url);
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const otherLocales = Object.values(languages).filter(
+  (locale) => locale.code !== lang
+)
+
+---
+
+<!-- <ul>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={translatePath("/", lang)}>{label}</a>
+      </li>
+    ))
+  }
+</ul> -->
+<div class="container">
+  {
+    otherLocales.map((locale) => (
+
+      <li class="">
+        <a
+          class=""
+          href={translatePath(`/${route ? route : ''}`, locale.code)}
+        >
+          
+          {locale.code.toUpperCase()}
+        </a>
+      </li>
+    ))
+  }
+</div>
+
+<style>
+  .container {
+    display: flex;
+    gap: 10px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 5px;
+    justify-content: space-evenly;
+    width: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #23262d;
+    border-radius: 6px;
+  }
+
+  span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  ul, li{
+    list-style: none;
+  }
+</style>

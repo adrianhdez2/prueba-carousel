@@ -1,0 +1,18 @@
+{
+    "INDEX_TITLE": "Bienvenido a Astro",
+    "INDEX_SUB": "Bienvenido a",
+    "ABOUT_TITLE": "Acerca de Astro",
+    "ABOUT_SUB": "Acerca de",
+    "CARD_1": "Documentación",
+    "BODY_1": "Aprende cómo funciona Astro y explora la documentación oficial de la API.",
+    "CARD_2": "Integraciones",
+    "BODY_2": "Potencia tu proyecto con nuevos frameworks y bibliotecas.",
+    "CARD_3": "Temas",
+    "BODY_3": "Explora una galaxia de temas de inicio creados por la comunidad.",
+    "CARD_4": "Acerca de",
+    "BODY_4": "Ven a saludar a nuestra increíble comunidad de Discord. ❤️",
+    "DESC_1": "Para comenzar, abre el directorio",
+    "DESC_2": "en tu proyecto.",
+    "DESC_3": "Desafío de código",
+    "DESC_4": "Modifica el mensaje 'Bienvenido a Astro' arriba."
+}
